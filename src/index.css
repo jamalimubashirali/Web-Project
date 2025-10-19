@@ -1,0 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+
+@import "tailwindcss";
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .glow-hit {
+    box-shadow: 0 0 20px rgba(16, 185, 129, 0.5);
+  }
+
+  .glow-miss {
+    box-shadow: 0 0 20px rgba(239, 68, 68, 0.5);
+  }
+}
