@@ -124,65 +124,46 @@ export function Bomb({ bomb, scaledPosition, onAnimationComplete, showExplosions
         animate={{ rotate: [0, 360] }}
         transition={{ duration: flightDuration, ease: "linear", delay: dropDelay }}
       >
-        {/* Main bomb body - More detailed */}
-        <div className="w-5 h-12 bg-gradient-to-b from-gray-800 via-gray-700 to-gray-900 rounded-full shadow-2xl border border-gray-600 relative">
-          {/* Bomb nose cone - Enhanced */}
-          <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 w-3 h-4 bg-gradient-to-b from-gray-600 to-gray-800 rounded-t-full border border-gray-500"></div>
+        {/* Compact Detailed Bomb */}
+        <div className="w-3 h-7 bg-gradient-to-b from-gray-800 via-gray-700 to-gray-900 rounded-full shadow-xl border border-gray-600 relative">
+          {/* Bomb nose cone */}
+          <div className="absolute -top-1.5 left-1/2 transform -translate-x-1/2 w-2 h-2.5 bg-gradient-to-b from-gray-600 to-gray-800 rounded-t-full border border-gray-500"></div>
           
-          {/* Body segments for realism */}
-          <div className="absolute top-1 left-0 right-0 h-0.5 bg-gray-600 opacity-60"></div>
-          <div className="absolute top-3 left-0 right-0 h-0.5 bg-gray-600 opacity-60"></div>
-          <div className="absolute top-7 left-0 right-0 h-0.5 bg-gray-600 opacity-60"></div>
+          {/* Body segments */}
+          <div className="absolute top-1 left-0 right-0 h-0.5 bg-gray-600 opacity-50"></div>
+          <div className="absolute top-3 left-0 right-0 h-0.5 bg-gray-600 opacity-50"></div>
           
-          {/* Enhanced bomb fins */}
-          <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2">
-            {/* Main fin assembly */}
-            <div className="w-8 h-3 bg-gray-600 rounded-sm relative shadow-lg">
-              {/* Individual fins */}
-              <div className="absolute -top-2 left-0 w-1.5 h-5 bg-gradient-to-b from-gray-500 to-gray-700 rounded-sm transform -rotate-15 shadow-md"></div>
-              <div className="absolute -top-2 right-0 w-1.5 h-5 bg-gradient-to-b from-gray-500 to-gray-700 rounded-sm transform rotate-15 shadow-md"></div>
-              <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 w-1.5 h-5 bg-gradient-to-b from-gray-500 to-gray-700 rounded-sm shadow-md"></div>
-              
-              {/* Fin details */}
-              <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-6 h-1 bg-gray-500 rounded-sm"></div>
+          {/* Compact bomb fins */}
+          <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2">
+            <div className="w-5 h-2 bg-gray-600 rounded-sm relative shadow-md">
+              {/* Simplified fins */}
+              <div className="absolute -top-1 left-0 w-1 h-3 bg-gray-500 rounded-sm transform -rotate-12 shadow-sm"></div>
+              <div className="absolute -top-1 right-0 w-1 h-3 bg-gray-500 rounded-sm transform rotate-12 shadow-sm"></div>
+              <div className="absolute -top-1 left-1/2 transform -translate-x-1/2 w-1 h-3 bg-gray-500 rounded-sm shadow-sm"></div>
             </div>
           </div>
           
-          {/* Enhanced bomb markings */}
-          <div className="absolute top-2 left-1/2 transform -translate-x-1/2 w-4 h-1.5 bg-yellow-400 rounded-sm opacity-90 shadow-sm"></div>
-          <div className="absolute top-4.5 left-1/2 transform -translate-x-1/2 w-3 h-0.5 bg-red-500 rounded-sm shadow-sm"></div>
-          <div className="absolute top-5.5 left-1/2 transform -translate-x-1/2 w-3 h-0.5 bg-red-500 rounded-sm shadow-sm"></div>
+          {/* Compact markings */}
+          <div className="absolute top-1.5 left-1/2 transform -translate-x-1/2 w-2.5 h-1 bg-yellow-400 rounded-sm opacity-90"></div>
+          <div className="absolute top-3 left-1/2 transform -translate-x-1/2 w-2 h-0.5 bg-red-500 rounded-sm"></div>
           
-          {/* Serial number/code */}
-          <div className="absolute top-8 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-white rounded-sm opacity-80 flex items-center justify-center">
-            <span className="text-gray-800 text-xs font-bold leading-none">{bomb.id + 1}</span>
+          {/* Small serial number */}
+          <div className="absolute top-4.5 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 bg-white rounded-sm opacity-80 flex items-center justify-center">
+            <span className="text-gray-800 text-xs font-bold leading-none" style={{ fontSize: '6px' }}>{bomb.id + 1}</span>
           </div>
           
           {/* Metallic highlights */}
-          <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-gray-400 to-transparent opacity-30 rounded-l-full"></div>
-          <div className="absolute top-0 right-0 w-0.5 h-full bg-gradient-to-b from-transparent to-gray-900 opacity-50 rounded-r-full"></div>
+          <div className="absolute top-0 left-0 w-0.5 h-full bg-gradient-to-b from-gray-400 to-transparent opacity-30 rounded-l-full"></div>
         </div>
         
-        {/* Enhanced smoke trail */}
+        {/* Compact smoke trail */}
         <motion.div
-          className="absolute -top-12 left-1/2 transform -translate-x-1/2"
+          className="absolute -top-6 left-1/2 transform -translate-x-1/2"
           initial={{ opacity: 0 }}
-          animate={{ opacity: [0, 0.7, 0] }}
-          transition={{ duration: 0.6, repeat: Infinity, delay: dropDelay }}
+          animate={{ opacity: [0, 0.6, 0] }}
+          transition={{ duration: 0.5, repeat: Infinity, delay: dropDelay }}
         >
-          <div className="w-1.5 h-8 bg-gradient-to-t from-gray-500 via-gray-400 to-transparent rounded-full blur-sm"></div>
-          <div className="absolute top-2 left-1/2 transform -translate-x-1/2 w-1 h-6 bg-gradient-to-t from-gray-600 to-transparent rounded-full blur-sm opacity-60"></div>
-        </motion.div>
-        
-        {/* Whistling effect lines */}
-        <motion.div
-          className="absolute -left-8 top-2"
-          initial={{ opacity: 0, x: 0 }}
-          animate={{ opacity: [0, 0.4, 0], x: [-10, 0, 10] }}
-          transition={{ duration: 0.3, repeat: Infinity, delay: dropDelay }}
-        >
-          <div className="w-6 h-0.5 bg-white opacity-60 rounded-full blur-sm"></div>
-          <div className="w-4 h-0.5 bg-white opacity-40 rounded-full blur-sm mt-1"></div>
+          <div className="w-1 h-4 bg-gradient-to-t from-gray-400 to-transparent rounded-full blur-sm"></div>
         </motion.div>
       </motion.div>
       

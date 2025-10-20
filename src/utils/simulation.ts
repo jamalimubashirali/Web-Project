@@ -1,5 +1,5 @@
 import { generateNormalPair } from './random';
-import { isPointInPolygon, type Point } from './geometry';
+import { isPointInPolygon } from './geometry';
 
 /**
  * Represents a bomb with its impact coordinates and hit status
